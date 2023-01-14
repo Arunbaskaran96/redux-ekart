@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useFormik } from "formik";
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function Lgin() {
   const nav = useNavigate();
@@ -25,7 +25,10 @@ function Lgin() {
     },
     onSubmit: async (values) => {
       setDisable(true);
-      const login = await axios.post("http://localhost:8000/login", values);
+      const login = await axios.post(
+        "https://deliveryapp-8sot.onrender.com/login",
+        values
+      );
       window.localStorage.setItem("token", login.data.token);
       nav("/portal/home");
     },
@@ -55,6 +58,7 @@ function Lgin() {
           <input disabled={disable} type="submit" value="Submit"></input>
         </div>
       </form>
+      <Link to="/register">Register</Link>
     </div>
   );
 }

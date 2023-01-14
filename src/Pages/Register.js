@@ -31,7 +31,10 @@ function Register() {
     },
     onSubmit: async (values) => {
       setDisable(true);
-      await axios.post("http://localhost:8000/register", values);
+      await axios.post(
+        "https://deliveryapp-8sot.onrender.com/register",
+        values
+      );
       alert("successfully registered");
       nav("/");
     },
