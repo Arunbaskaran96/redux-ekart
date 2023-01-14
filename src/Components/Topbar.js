@@ -1,10 +1,11 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Topbar.css";
 
 function Topbar() {
   const cart = useSelector((state) => state.Cart.items);
+  const nav = useNavigate();
 
   return (
     <nav class="navbar navbar-dark bg-dark fixed-top ">
@@ -28,6 +29,17 @@ function Topbar() {
             <Link to="/portal/cart">
               {cart.length > 0 ? `Cart-${cart.length}` : "Cart"}
             </Link>
+          </li>
+          <li>
+            <button
+              onClick={() => {
+                window.localStorage.removeItem("token");
+                nav("/");
+              }}
+              className="btn btn-danger btn-sm"
+            >
+              Log Out
+            </button>
           </li>
         </ul>
       </div>
