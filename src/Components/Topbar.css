@@ -1,0 +1,29 @@
+.pages-list{
+    display: flex;
+    color: whitesmoke;
+    justify-content: center;
+    align-items: center;
+
+}
+
+li{
+    margin:0px 15px;
+    list-style-type: none;
+}
+
+a{
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+.main-container{
+    display: flex;
+    justify-content: center;
+    height: 80vh;
+    align-items: center;
+    flex-direction: column;
+}
+
+span{
+    color: red;
+}
