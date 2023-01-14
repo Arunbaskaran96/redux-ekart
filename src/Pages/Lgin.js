@@ -34,7 +34,7 @@ function Lgin() {
     },
   });
   return (
-    <div>
+    <div className="main-container">
       <form onSubmit={formik.handleSubmit}>
         <div className="main-container">
           <label>Email</label>
@@ -58,7 +58,9 @@ function Lgin() {
           <input disabled={disable} type="submit" value="Submit"></input>
         </div>
       </form>
-      <Link to="/register">Register</Link>
+      <Link className="btn btn-primary" to="/register">
+        Register
+      </Link>
     </div>
   );
 }
