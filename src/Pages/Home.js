@@ -26,11 +26,14 @@ function Home() {
   }, []);
 
   const getData = async () => {
-    const item = await axios.get("http://localhost:8000/products", {
-      headers: {
-        Authorization: `${window.localStorage.getItem("token")}`,
-      },
-    });
+    const item = await axios.get(
+      "https://deliveryapp-8sot.onrender.com/products",
+      {
+        headers: {
+          Authorization: `${window.localStorage.getItem("token")}`,
+        },
+      }
+    );
     console.log(item.data);
     dispatcher(additems(item.data));
     setLoading(false);
